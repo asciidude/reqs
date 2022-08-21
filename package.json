@@ -1,0 +1,14 @@
+{
+  "name": "reqs",
+  "description": "A request tool that makes use of the axios module, written in ESM",
+  "type": "module",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chalk": "^5.0.1",
+    "inquirer": "^9.1.0",
+    "nanospinner": "^1.1.0"
+  }
+}
