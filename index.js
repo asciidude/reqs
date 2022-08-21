@@ -1,9 +1,13 @@
+#! /usr/bin/env node
 import axios from 'axios';
 
 import chalk from 'chalk';
 import inquirer from 'inquirer';
 
 import fs from 'fs';
+
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 // ----> TODO <----
 // ✅ Setup inquirer
@@ -16,7 +20,7 @@ const createDate = () => {
     date = `${dateLiteral.getMonth()}-${dateLiteral.getDay()}-${dateLiteral.getFullYear()}.${dateLiteral.getMinutes()}-${dateLiteral.getSeconds()}`;
 } 
 
-console.log(chalk.red('Thank you for using reqs ♥'));
+console.log(chalk.red('Thank you for using reqsr ♥'));
 
 // Get HTTP module
 const askMethod = await inquirer.prompt({
@@ -85,11 +89,11 @@ try {
     createDate();
 
     fs.writeFileSync(
-        `${process.cwd()}/logs/${date}.log`,
+        `${__dirname}logs/${date}.log`,
         String(err)
     );
 
-    console.log(chalk.redBright(`❌ An error has occured, view full error log in ${process.cwd()}/logs/${date}.log`));
+    console.log(chalk.redBright(`❌ An error has occured, view full error log in ${__dirname}logs/${date}.log`));
     process.exit(-1);
 }
 
@@ -108,8 +112,8 @@ const info = {
 }
 
 fs.writeFileSync(
-    `${process.cwd()}/logs/${date}.log`,
+    `${__dirname}logs/${date}.log`,
     String(JSON.stringify(info, null, 4))
 );
 
-console.log(chalk.greenBright(`✔ Success! View the log file at ${process.cwd()}/logs/${date}.log!`))
+console.log(chalk.greenBright(`✔ Success! View the log file at ${__dirname}logs/${date}.log!`))
