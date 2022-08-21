@@ -2,7 +2,7 @@
   "name": "reqsr",
   "description": "A request tool that makes use of the axios module, written in ESM",
   "type": "module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {

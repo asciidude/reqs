@@ -103,7 +103,7 @@ createDate();
 
 const info = {
     method: method,
-    date: date,
+    date: dateLiteral.toUTCString(),
     link: link,
     status: returnedData.status,
     contentType: returnedData.headers['content-type'],
