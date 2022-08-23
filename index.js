@@ -46,7 +46,7 @@ const askData = await inquirer.prompt({
     default() { return null; }
 });
 
-link = JSON.stringify(askData.data);
+data = JSON.stringify(askData.data);
 
 // Get website link
 const askLink = await inquirer.prompt({
